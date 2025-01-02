@@ -1,0 +1,23 @@
+{
+  "name": "mcp-crypto-price",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "mcp-crypto-price": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "node build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "build"
+  ]
+}
