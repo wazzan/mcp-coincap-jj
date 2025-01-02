@@ -279,10 +279,6 @@ Contributions are welcome! Please feel free to submit a Pull Request. When contr
 - Use environment variables for sensitive data
 - Keep dependencies updated
 
-## License
-
-[Your chosen license]
-
 ## Acknowledgments
 
 - Built using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
