@@ -174,5 +174,5 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-- Built using the [Model Context Protocol (MCP)](https://github.com/anthropics/mcp)
+- Built using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
 - Cryptocurrency data provided by [CoinCap API](https://coincap.io/)
