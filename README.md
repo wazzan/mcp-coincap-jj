@@ -1,17 +1,31 @@
-# Crypto Price MCP Server
+# Crypto Price & Market Analysis MCP Server
 
-A Model Context Protocol (MCP) server that fetches real-time cryptocurrency prices and statistics using the CoinCap API. This server can be used with Claude for Desktop or other MCP clients to get current cryptocurrency prices, 24-hour changes, trading volume, and market rank.
+A Model Context Protocol (MCP) server that provides comprehensive cryptocurrency analysis using the CoinCap API. This server offers real-time price data, market analysis, and historical trends through an easy-to-use interface.
 
 ## Features
 
-- Get real-time cryptocurrency prices from CoinCap
-- Case-insensitive symbol lookup (e.g., "btc", "BTC", "Btc" all work)
-- Returns comprehensive stats including:
-  - Current price in USD
-  - 24-hour price change percentage
-  - 24-hour trading volume
-  - Market rank
-- Optional API key support for higher rate limits
+### 1. Basic Price Information (`get-crypto-price`)
+- Real-time cryptocurrency prices
+- 24-hour price changes
+- Trading volume
+- Market cap
+- Market rank
+- Supply information
+
+### 2. Market Analysis (`get-market-analysis`)
+- Top 5 exchanges by volume
+- Price variations across exchanges
+- Volume distribution analysis
+- VWAP (Volume Weighted Average Price)
+- Market dominance metrics
+
+### 3. Historical Analysis (`get-historical-analysis`)
+- Customizable time intervals (5min to 1 day)
+- Historical price trends
+- Price range analysis
+- Volatility metrics
+- Support for up to 30 days of historical data
+- Configurable intervals: m5, m15, m30, h1, h2, h6, h12, d1
 
 ## Prerequisites
 
