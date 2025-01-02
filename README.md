@@ -22,17 +22,20 @@ A Model Context Protocol (MCP) server that fetches real-time cryptocurrency pric
 ## Installation
 
 1. Clone or download this repository:
+
 ```bash
 git clone [repository-url]
 cd mcp-crypto-price
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Build the server:
+
 ```bash
 npm run build
 ```
@@ -40,9 +43,11 @@ npm run build
 ## Configuration
 
 ### Basic Setup (No API Key)
+
 The server works without any API key, subject to CoinCap's basic rate limits. No additional configuration is needed.
 
 ### Enhanced Setup (With API Key)
+
 To use higher rate limits:
 
 1. Get an API key from [CoinCap](https://coincap.io/)
@@ -50,36 +55,34 @@ To use higher rate limits:
 2. Configure Claude for Desktop by editing the configuration file:
 
 For MacOS (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
 ```json
 {
-    "mcpServers": {
-        "mcp-crypto-price": {
-            "command": "node",
-            "args": [
-                "/ABSOLUTE/PATH/TO/mcp-crypto-price/build/index.js"
-            ],
-            "env": [
-                "COINCAP_API_KEY=YOUR_API_KEY_HERE"
-            ]
-        }
+  "mcpServers": {
+    "mcp-crypto-price": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/mcp-crypto-price/build/index.js"],
+      "env": {
+        "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
+      }
     }
+  }
 }
 ```
 
 For Windows (`%AppData%\Claude\claude_desktop_config.json`):
+
 ```json
 {
-    "mcpServers": {
-        "mcp-crypto-price": {
-            "command": "node",
-            "args": [
-                "C:\\ABSOLUTE\\PATH\\TO\\mcp-crypto-price\\build\\index.js"
-            ],
-            "env": [
-                "COINCAP_API_KEY=YOUR_API_KEY_HERE"
-            ]
-        }
+  "mcpServers": {
+    "mcp-crypto-price": {
+      "command": "node",
+      "args": ["C:\\ABSOLUTE\\PATH\\TO\\mcp-crypto-price\\build\\index.js"],
+      "env": {
+        "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
+      }
     }
+  }
 }
 ```
 
@@ -133,11 +136,13 @@ npm start
 ## Troubleshooting
 
 1. **Server not showing in Claude for Desktop**
+
    - Check the configuration file path and syntax
    - Ensure all paths are absolute
    - Restart Claude for Desktop
 
 2. **"Symbol not found" errors**
+
    - Verify the cryptocurrency symbol is correct
    - Check if the symbol is listed on CoinCap
 
