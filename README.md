@@ -133,7 +133,7 @@ While not required, you can add an API key for higher rate limits:
 
 ## Project Inspiration
 
-This project was inspired by QuantGeekDev's [coincap-mcp](https://github.com/QuantGeekDev/coincap-mcp) project.
+This project was inspired by Alex Andru's [coincap-mcp](https://github.com/QuantGeekDev/coincap-mcp) project.
 
 ## 📜 License
 
