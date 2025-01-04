@@ -1,7 +1,8 @@
+import { jest } from '@jest/globals';
 import { getAssets, getMarkets, getHistoricalData, clearCache } from '../coincap.js';
 
 // Mock global fetch
-const mockFetch = jest.fn();
+const mockFetch = jest.fn() as jest.MockedFunction<typeof fetch>;
 global.fetch = mockFetch;
 
 // Suppress console.error during tests
@@ -32,10 +33,10 @@ describe('CoinCap Service', () => {
         ]
       };
 
-      mockFetch.mockResolvedValueOnce({
+      mockFetch.mockImplementationOnce(() => Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockResponse)
-      });
+      } as Response));
 
       const result = await getAssets();
       expect(result).toEqual(mockResponse);
@@ -58,7 +59,7 @@ describe('CoinCap Service', () => {
         ok: false,
         status: 500,
         statusText: 'Internal Server Error'
-      }));
+      } as Response));
 
       const result = await getAssets();
       expect(result).toBeNull();
@@ -81,7 +82,7 @@ describe('CoinCap Service', () => {
       mockFetch.mockImplementationOnce(() => Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockResponse)
-      }));
+      } as Response));
 
       const result = await getMarkets('bitcoin');
       expect(result).toEqual(mockResponse);
@@ -115,7 +116,7 @@ describe('CoinCap Service', () => {
       mockFetch.mockImplementationOnce(() => Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockResponse)
-      }));
+      } as Response));
 
       const result = await getHistoricalData('bitcoin', 'h1', 1609459200000, 1609545600000);
       expect(result).toEqual(mockResponse);
