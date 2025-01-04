@@ -111,6 +111,12 @@ For development with auto-rebuild:
 npm run watch
 ```
 
+Run test suite:
+
+```bash
+npm test
+```
+
 ## Optional: CoinCap API Key
 
 While not required, you can add an API key for higher rate limits:
