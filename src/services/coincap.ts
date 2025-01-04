@@ -1,10 +1,5 @@
 import { COINCAP_API_BASE, CACHE_TTL } from '../config/index.js';
-import type { AssetsResponse, HistoricalData, MarketsResponse } from '../types/index.js';
-
-interface CacheEntry<T> {
-  data: T;
-  timestamp: number;
-}
+import type { AssetsResponse, CacheEntry, HistoricalData, MarketsResponse } from '../types/index.js';
 
 const cache = new Map<string, CacheEntry<any>>();
 

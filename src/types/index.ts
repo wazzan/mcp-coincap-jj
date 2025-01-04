@@ -1,3 +1,7 @@
+export interface CacheEntry<T> {
+  data: T;
+  timestamp: number;
+}
 export interface CryptoAsset {
   id: string;
   rank: string;
