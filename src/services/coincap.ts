@@ -8,6 +8,11 @@ interface CacheEntry<T> {
 
 const cache = new Map<string, CacheEntry<any>>();
 
+// Expose cache clear function for testing
+export function clearCache(): void {
+  cache.clear();
+}
+
 function getCachedData<T>(key: string): T | null {
   const entry = cache.get(key);
   if (!entry) return null;
