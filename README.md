@@ -77,8 +77,8 @@ Analyzes historical price data with:
 
 To build it locally:
 
-On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
-On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+- On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
 {
