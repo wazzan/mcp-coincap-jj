@@ -22,8 +22,8 @@ Then add this configuration to your Claude Desktop config file:
 {
   "mcpServers": {
     "mcp-crypto-price": {
-      "command": "node",
-      "args": ["/ABSOLUTE/PATH/TO/mcp-crypto-price/build/index.js"]
+      "command": "npx",
+      "args": ["-y", "mcp-crypto-price"]
     }
   }
 }
@@ -84,8 +84,8 @@ To build it locally:
 {
   "mcpServers": {
     "mcp-crypto-price": {
-      "command": "node",
-      "args": ["/ABSOLUTE/PATH/TO/mcp-crypto-price/build/index.js"]
+      "command": "npx",
+      "args": ["-y", "mcp-crypto-price"]
     }
   }
 }
@@ -125,9 +125,10 @@ While not required, you can add an API key for higher rate limits:
 {
   "mcpServers": {
     "mcp-crypto-price": {
-      "command": "node",
+      "command": "npx",
       "args": [
-          "/ABSOLUTE/PATH/TO/mcp-crypto-price/build/index.js"
+          "-y",
+          "mcp-crypto-price"
       ],
       "env": {
         "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
