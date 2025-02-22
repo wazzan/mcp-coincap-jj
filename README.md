@@ -2,20 +2,11 @@
 
 A Model Context Protocol (MCP) server that provides comprehensive cryptocurrency analysis using the CoinCap API. This server offers real-time price data, market analysis, and historical trends through an easy-to-use interface.
 
-## 🚀 Quick Start
+## Usage
 
-First, clone and build the repository:
+Add this configuration to your Claude Desktop config file:
 
-```bash
-git clone https://github.com/truss44/mcp-crypto-price.git
-cd mcp-crypto-price
-npm install
-npm run build
-```
-
-Then add this configuration to your Claude Desktop config file:
-
-- **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`  
+- **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
@@ -29,21 +20,25 @@ Then add this configuration to your Claude Desktop config file:
 }
 ```
 
-### Prerequisites
+## Optional: CoinCap API Key
 
-- Node.js 18+
-- npm
-- Claude for Desktop or another MCP client
+For higher rate limits, add an API key to your configuration:
 
-Then, launch Claude Desktop and you're ready to go!
+```json
+{
+  "mcpServers": {
+    "mcp-crypto-price": {
+      "command": "npx",
+      "args": ["-y", "mcp-crypto-price"],
+      "env": {
+        "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
 
-## Sample Prompts
-
-- "What's the current price of Bitcoin?"
-- "Show me market analysis for ETH"
-- "Give me the 7-day price history for DOGE"
-- "What are the top exchanges trading BTC?"
-- "Show me the price trends for SOL with 1-hour intervals"
+Launch Claude Desktop to start using the crypto analysis tools.
 
 ## Tools
 
@@ -73,75 +68,18 @@ Analyzes historical price data with:
 - Volatility metrics
 - High/low price ranges
 
-## Development - local build
+## Sample Prompts
 
-To build it locally:
-
-- **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "mcp-crypto-price": {
-      "command": "npx",
-      "args": ["-y", "mcp-crypto-price"]
-    }
-  }
-}
-```
-
-## Development
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Build the server:
-
-```bash
-npm run build
-```
-
-For development with auto-rebuild:
-
-```bash
-npm run watch
-```
-
-Run test suite:
-
-```bash
-npm test
-```
-
-## Optional: CoinCap API Key
-
-While not required, you can add an API key for higher rate limits:
-
-```json
-{
-  "mcpServers": {
-    "mcp-crypto-price": {
-      "command": "npx",
-      "args": [
-          "-y",
-          "mcp-crypto-price"
-      ],
-      "env": {
-        "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
-      }
-    }
-  }
-}
-```
+- "What's the current price of Bitcoin?"
+- "Show me market analysis for ETH"
+- "Give me the 7-day price history for DOGE"
+- "What are the top exchanges trading BTC?"
+- "Show me the price trends for SOL with 1-hour intervals"
 
 ## Project Inspiration
 
 This project was inspired by Alex Andru's [coincap-mcp](https://github.com/QuantGeekDev/coincap-mcp) project.
 
-## 📜 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
