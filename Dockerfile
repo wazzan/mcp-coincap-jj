@@ -1,11 +1,11 @@
 # Build stage
-FROM node:18-alpine AS builder
+FROM node:22-alpine AS builder
 
 # Set working directory
 WORKDIR /app
 
 # Copy package files
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install --ignore-scripts
@@ -18,16 +18,17 @@ COPY tsconfig.json ./
 RUN npm run build
 
 # Production stage
-FROM node:18-alpine
+FROM node:22-alpine AS release
 
 # Set working directory
 WORKDIR /app
 
 # Copy built files from builder stage
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/package-lock.json ./package-lock.json
 
-# Copy package files (both package.json and package-lock.json)
-COPY package*.json ./
+ENV NODE_ENV=production
 
 # Install production dependencies without running scripts
 RUN npm ci --omit=dev --ignore-scripts

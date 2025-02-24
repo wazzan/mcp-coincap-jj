@@ -19,7 +19,7 @@
     "build": "tsc && shx chmod +x dist/*.js",
     "prepare": "npm run build",
     "start": "node dist/index.js",
-    "watch": "tsc -w",
+    "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector dist/index.js",
     "test": "jest",
     "test:coverage": "jest --coverage"
