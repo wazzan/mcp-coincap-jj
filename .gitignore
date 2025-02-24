@@ -22,6 +22,7 @@
 !.nycrc
 !.yamllint.yaml
 !.configurations/
+!.releaserc.json
 
 # === Rules for root dir ===
 /core
