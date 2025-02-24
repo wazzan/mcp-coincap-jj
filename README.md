@@ -1,7 +1,5 @@
 # Crypto Price & Market Analysis MCP Server
-[![smithery badge](https://smithery.ai/badge/@truss44/mcp-crypto-price)](https://smithery.ai/server/@truss44/mcp-crypto-price)
-
-![NPM Downloads](https://img.shields.io/npm/d18m/mcp-crypto-price?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmcp-crypto-price)
+[![smithery badge](https://smithery.ai/badge/@truss44/mcp-crypto-price)](https://smithery.ai/server/@truss44/mcp-crypto-price) ![NPM Downloads](https://img.shields.io/npm/d18m/mcp-crypto-price?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmcp-crypto-price)
 
 A Model Context Protocol (MCP) server that provides comprehensive cryptocurrency analysis using the CoinCap API. This server offers real-time price data, market analysis, and historical trends through an easy-to-use interface.
 
