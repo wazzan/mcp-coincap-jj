@@ -29,7 +29,7 @@ COPY --from=builder /app/dist ./dist
 COPY package.json ./
 
 # Install only production dependencies
-RUN npm ci --omit=dev
+RUN npm install --omit=dev --ignore-scripts
 
 # Set environment variables if needed
 # ENV COINCAP_API_KEY=<YOUR_API_KEY>
