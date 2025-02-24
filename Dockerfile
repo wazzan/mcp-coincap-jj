@@ -1,7 +1,7 @@
 # Build stage
-FROM node:18-alpine as builder
+FROM node:18-alpine AS builder
 
-# Create app directory
+# Set working directory
 WORKDIR /app
 
 # Copy package files
@@ -20,18 +20,20 @@ RUN npm run build
 # Production stage
 FROM node:18-alpine
 
-# Create app directory
+# Set working directory
 WORKDIR /app
 
-# First copy the built files
+# Copy built files from builder stage
 COPY --from=builder /app/dist ./dist
-COPY package.json ./
+
+# Copy package files (both package.json and package-lock.json)
+COPY package*.json ./
 
 # Install production dependencies without running scripts
-RUN npm install --omit=dev --ignore-scripts
+RUN npm ci --omit=dev --ignore-scripts
 
 # Set environment variables if needed
 # ENV COINCAP_API_KEY=<YOUR_API_KEY>
 
 # Command to run the application
-ENTRYPOINT ["node", "dist/index.js"]
+CMD ["node", "dist/index.js"]
