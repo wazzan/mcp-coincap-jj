@@ -1,4 +1,4 @@
-export const COINCAP_API_BASE = "https://api.coincap.io/v2";
+export const COINCAP_API_BASE = "https://rest.coincap.io/v3";
 
 export const SERVER_CONFIG = {
   name: "mcp-coincap-jj",
