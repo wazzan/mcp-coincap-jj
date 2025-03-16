@@ -1,0 +1,37 @@
+{
+  "name": "mcp-coincap-jj",
+  "displayName": "CoinCap Crypto Analysis",
+  "description": "A cryptocurrency price and market analysis tool using CoinCap API v3",
+  "author": "wazzan",
+  "repository": "https://github.com/wazzan/mcp-coincap-jj",
+  "npm": "@bujaayjaay/mcp-coincap-jj",
+  "version": "1.0.0",
+  "tags": [
+    "cryptocurrency",
+    "finance",
+    "price-tracking",
+    "market-analysis"
+  ],
+  "category": "Finance & Trading",
+  "tools": [
+    {
+      "name": "get-crypto-price",
+      "description": "Get current price and 24h stats for a cryptocurrency"
+    },
+    {
+      "name": "get-market-analysis",
+      "description": "Get detailed market analysis including top exchanges and volume distribution"
+    },
+    {
+      "name": "get-historical-analysis",
+      "description": "Get historical price analysis with customizable timeframe"
+    }
+  ],
+  "requirements": {
+    "apiKey": {
+      "name": "CoinCap API Key",
+      "description": "Required for access to CoinCap API v3",
+      "url": "https://pro.coincap.io/api-docs/"
+    }
+  }
+}
