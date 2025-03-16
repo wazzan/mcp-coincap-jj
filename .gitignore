@@ -23,6 +23,8 @@
 !.yamllint.yaml
 !.configurations/
 !.releaserc.json
+!.gitattributes
+!.npmrc
 
 # === Rules for root dir ===
 /core

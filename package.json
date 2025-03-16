@@ -1,14 +1,14 @@
 {
-  "name": "mcp-crypto-price",
-  "version": "1.0.4",
-  "description": "A Model Context Protocol (MCP) server that provides real-time cryptocurrency data and analysis through CoinCap's API. Features include price tracking, market analysis, and historical trends.",
+  "name": "mcp-coincap-jj",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol (MCP) server that provides real-time cryptocurrency data and analysis through CoinCap's API. Features include price tracking, market analysis, and historical trends. This is a fork of the original repo by truss44, with updates to use the new API and additional future changes.",
   "license": "MIT",
   "author": {
-    "name": "Tracey Russell"
+    "name": "wazzan"
   },
   "type": "module",
   "bin": {
-    "mcp-crypto-price": "./dist/index.js"
+    "mcp-coincap-jj": "./dist/index.js"
   },
   "files": [
     "dist",
@@ -60,10 +60,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/truss44/mcp-crypto-price.git"
+    "url": "git+https://github.com/wazzan/mcp-coincap-jj.git"
   },
   "bugs": {
-    "url": "https://github.com/truss44/mcp-crypto-price/issues"
+    "url": "https://github.com/wazzan/mcp-coincap-jj/issues"
   },
-  "homepage": "https://github.com/truss44/mcp-crypto-price"
+  "homepage": "https://github.com/wazzan/mcp-coincap-jj"
 }

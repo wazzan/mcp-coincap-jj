@@ -1,11 +1,10 @@
-# Crypto Price & Market Analysis MCP Server
-[![smithery badge](https://smithery.ai/badge/@truss44/mcp-crypto-price)](https://smithery.ai/server/@truss44/mcp-crypto-price) [![NPM Downloads](https://img.shields.io/npm/d18m/mcp-crypto-price)](https://www.npmjs.com/package/mcp-crypto-price)
-
-<a href="https://glama.ai/mcp/servers/jpqoejojnc">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/jpqoejojnc/badge" />
-</a>
+# Crypto Price & Market Analysis MCP Server (JJ Fork)
 
 A Model Context Protocol (MCP) server that provides comprehensive cryptocurrency analysis using the CoinCap API. This server offers real-time price data, market analysis, and historical trends through an easy-to-use interface.
+
+## About This Fork
+
+This is a fork of the original [mcp-crypto-price](https://github.com/truss44/mcp-crypto-price) project by Tracey Russell, with updates to use the new API and additional future changes/testing.
 
 ## Usage
 
@@ -17,9 +16,9 @@ Add this configuration to your Claude Desktop config file:
 ```json
 {
   "mcpServers": {
-    "mcp-crypto-price": {
+    "mcp-coincap-jj": {
       "command": "npx",
-      "args": ["-y", "mcp-crypto-price"]
+      "args": ["-y", "mcp-coincap-jj"]
     }
   }
 }
@@ -32,9 +31,9 @@ For higher rate limits, add an API key to your configuration:
 ```json
 {
   "mcpServers": {
-    "mcp-crypto-price": {
+    "mcp-coincap-jj": {
       "command": "npx",
-      "args": ["-y", "mcp-crypto-price"],
+      "args": ["-y", "mcp-coincap-jj"],
       "env": {
         "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
       }
@@ -83,7 +82,7 @@ Analyzes historical price data with:
 
 ## Project Inspiration
 
-This project was inspired by Alex Andru's [coincap-mcp](https://github.com/QuantGeekDev/coincap-mcp) project.
+This project is a fork of Tracey Russell's [mcp-crypto-price](https://github.com/truss44/mcp-crypto-price), which was inspired by Alex Andru's [coincap-mcp](https://github.com/QuantGeekDev/coincap-mcp) project.
 
 ## License
 

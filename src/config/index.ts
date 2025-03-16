@@ -1,7 +1,7 @@
 export const COINCAP_API_BASE = "https://api.coincap.io/v2";
 
 export const SERVER_CONFIG = {
-  name: "mcp-crypto-price",
+  name: "mcp-coincap-jj",
   version: "1.0.0",
 } as const;
 
