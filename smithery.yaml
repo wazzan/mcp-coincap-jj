@@ -9,7 +9,7 @@ startCommand:
     properties:
       coincapApiKey:
         type: string
-        description: Optional API key for CoinCap to increase rate limits.
+        description: Updated origonal mcp server which used old v2 api to using v3 api froin CoinCap.
   commandFunction:
     # A function that produces the CLI command to start the MCP on stdio.
     |-
