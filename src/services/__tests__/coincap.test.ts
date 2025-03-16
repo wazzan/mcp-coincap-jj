@@ -41,7 +41,7 @@ describe('CoinCap Service', () => {
       const result = await getAssets();
       expect(result).toEqual(mockResponse);
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://api.coincap.io/v2/assets',
+        'https://rest.coincap.io/v3/assets',
         expect.any(Object)
       );
     });
@@ -87,7 +87,7 @@ describe('CoinCap Service', () => {
       const result = await getMarkets('bitcoin');
       expect(result).toEqual(mockResponse);
       expect(mockFetch).toHaveBeenCalledWith(
-        'https://api.coincap.io/v2/assets/bitcoin/markets',
+        'https://rest.coincap.io/v3/assets/bitcoin/markets',
         expect.any(Object)
       );
     });
@@ -121,7 +121,7 @@ describe('CoinCap Service', () => {
       const result = await getHistoricalData('bitcoin', 'h1', 1609459200000, 1609545600000);
       expect(result).toEqual(mockResponse);
       expect(mockFetch).toHaveBeenCalledWith(
-        expect.stringContaining('https://api.coincap.io/v2/assets/bitcoin/history'),
+        expect.stringContaining('https://rest.coincap.io/v3/assets/bitcoin/history'),
         expect.any(Object)
       );
     });
