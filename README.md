@@ -18,6 +18,19 @@ npm install @bujaayjaay/mcp-coincap-jj
 
 ## Usage
 
+### Smithery Installation (Recommended)
+
+The easiest way to use this tool is through Smithery:
+
+1. Ensure you have Smithery installed for your Claude Desktop app
+2. Run the following command:
+   ```
+   smithery install @bujaayjaay/mcp-coincap-jj
+   ```
+3. You'll be prompted to enter your CoinCap API key during setup
+
+### Manual Configuration
+
 Add this configuration to your Claude Desktop config file:
 
 - **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
