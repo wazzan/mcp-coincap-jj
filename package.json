@@ -21,8 +21,8 @@
     "start": "node dist/index.js",
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector dist/index.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test": "jest src",
+    "test:coverage": "jest --coverage src"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.4.1",
