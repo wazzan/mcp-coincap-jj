@@ -3,6 +3,10 @@
 [![smithery badge](https://smithery.ai/badge/@wazzan/mcp-coincap-jj)](https://smithery.ai/server/@wazzan/mcp-coincap-jj)
 [![npm downloads](https://img.shields.io/npm/dt/@bujaayjaay/mcp-coincap-jj.svg)](https://www.npmjs.com/package/@bujaayjaay/mcp-coincap-jj)
 
+<a href="https://glama.ai/mcp/servers/4lz96gw3yb">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/4lz96gw3yb/badge" />
+</a>
+
 A Model Context Protocol (MCP) server that provides comprehensive cryptocurrency analysis using the CoinCap API. This server offers real-time price data, market analysis, and historical trends through an easy-to-use interface.
 
 ## 📌 About This Fork
