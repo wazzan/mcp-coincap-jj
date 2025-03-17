@@ -5,25 +5,107 @@
 
 A Model Context Protocol (MCP) server that provides comprehensive cryptocurrency analysis using the CoinCap API. This server offers real-time price data, market analysis, and historical trends through an easy-to-use interface.
 
-## About This Fork
+## 📌 About This Fork
 
-This is a fork of the original [mcp-crypto-price](https://github.com/truss44/mcp-crypto-price) project by Tracey Russell, with updates to use the new v3 API and additional future changes/testing.
+This is a fork of the original [mcp-crypto-price](https://github.com/truss44/mcp-crypto-price) project by Tracey Russell
+
+✅ What’s changed:
+   - Updated to use the CoinCap v3 API (as v2 is being sunset).
+   - Additional improvements and testing planned as time permits.
+
+💡 Shoutout to Coin Cap for their “stake-to-API” subscription model—something I hope more API providers adopt. Subscription fatigue is real!
 
 > **Package Note**: This project is hosted on GitHub as `wazzan/mcp-coincap-jj` but published to npm as `@bujaayjaay/mcp-coincap-jj`
 
-## Installation
+---
+## 🚀 Quick Start (For First-Time Users)
 
-You can install this package via npm:
+If you’re new to MCP servers, this guide provides step-by-step instructions to get you started.
+
+I tested this on a Windows 11 VM to avoid cluttering my Mac—worked flawlessly!
+
+Claude Desktop Config Locations:
+
+- **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+--- 
+🟢 **Windows Setup Guide (Same Steps for Any MCP Client)**
+
+1.	Install Node.js: (https://nodejs.org/en)
+2.	Install Claude Desktop
+3.	Configure Claude Desktop:
+   - Open the hamburger menu (top-left corner) → File → Settings → Developer → Edit Config
+   - This opens the claude_desktop_config.json file location in Windows Explorer.
+   - Edit it with your favorite editor and add the following configuration (make sure to include all closing braces!):
+
+> Note you can use these same instructions for any other MCP Client
+
+```json
+{
+  "mcpServers": {
+    "mcp-coincap-jj": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@bujaayjaay/mcp-coincap-jj"
+      ],
+      "env": {
+        "COINCAP_API_KEY": "INPUT_YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+
+## 🛠️  Developer Setup (Local Installation)
+
+For developers and contributors who want to work on the project locally:
+
+##### 🖥️ Option 1: Install From npm
 
 ```bash
 npm install @bujaayjaay/mcp-coincap-jj
 ```
 
-## Usage
+##### 🖥️ Option 2: Clone & Run Locally
 
-### Smithery Installation (Recommended)
+```bash
+git clone https://github.com/wazzan/mcp-coincap-jj.git
+cd mcp-coincap-jj
+npm install        # Install dependencies
+npm run build      # Compile TypeScript code
+npm test           # Run tests to verify everything works
+npm start          # Starts the MCP server locally
+```
 
-The easiest way to use this tool is through Smithery:
+MCP Server Config for Local Testing (Windows Example)
+- If running locally with npx, use this configuration in Claude Desktop (or any MCP client):
+
+```json
+{
+  "mcpServers": {
+    "mcp-coincap-jj": {
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "C:\\Program Files\\nodejs\\npx.cmd",
+        "C:\\Users\\YOUR-WINDOWS-USERNAME\\repos\\github\\mcp-coincap-jj"
+      ],
+      "env": {
+        "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
+      },
+      "disabled": false,
+      "alwaysAllow": []
+    }
+  }
+}
+```
+🔧 Pro Tip: Using absolute paths on Windows ensures a smooth experience, especially when running multiple environments.
+
+### Smithery Installation (Optional but Easy)
+
+Although it takes away some of the personal learning experience, it’s a great quick start!
 
 1. Ensure you have Smithery installed for your Claude Desktop app
 2. Run the following command:
@@ -32,65 +114,14 @@ The easiest way to use this tool is through Smithery:
    ```
 3. You'll be prompted to enter your CoinCap API key during setup
 
-### Manual Configuration
-
-Add this configuration to your Claude Desktop config file:
-
-- **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
-
 ## UPDATE: CoinCap API Key
 
 You now have to obtain an API Key from CoinCap to use the updated v3 API as v2 is being deprecated:
 (https://pro.coincap.io/api-docs/)
 
-Standard mcpservers config for npm package:
-```json
-{
-  "mcpServers": {
-    "mcp-coincap-jj": {
-      "command": "npx",
-      "args": ["-y", "@bujaayjaay/mcp-coincap-jj"],
-      "env": {
-        "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
-      }
-    }
-  }
-}
-```
+## ⚡Usage - Tools
 
-## Running locally
-
-- Clone the repo: `git clone https://github.com/wazzan/mcp-coincap-jj.git`
-- `npm install` # Install dependencies
-- `npm run build` # Compile
-- `npm test` # Test to make sure everything is fine
-- `npm start` # Starts the server - You can exit this if you want to run it via npx at this point going forward (as per below)
-
-Set up the mcpserver config as follows in your client (Claude Desktop App or any other compatible client, I used a VM Windows 11 here because I did not want to clog my Mac with unnecessary installations.)
-
-```json
-"mcp-coincap-jj": {
-  "command": "cmd.exe",
-  "args": [
-    "/c",
-    "C:\\Program Files\\nodejs\\npx.cmd",
-    "C:\\Users\\YOUR-WINDOWS-USERNAME\\repos\\github\\mcp-coincap-jj"
-  ],
-  "env": {
-    "COINCAP_API_KEY": "YOUR_API_KEY_HERE"
-  },
-  "disabled": false,
-  "alwaysAllow": []
-}
-```
-I found that using absolute paths allows you to work flawlessly and negate any unnecessary config issues. In the above example I pointed the path to my nodejs/npx installation and under it the path to the local repo. This allows the mcp client to run npx and load up the server on demand.
-
-Launch Claude Desktop (or any other client) to start using the crypto analysis tools.
-
-## Tools
-
-#### get-crypto-price
+#### `get-crypto-price`
 
 Gets current price and 24h stats for any cryptocurrency, including:
 - Current price in USD
@@ -99,7 +130,7 @@ Gets current price and 24h stats for any cryptocurrency, including:
 - Market cap
 - Market rank
 
-#### get-market-analysis
+#### `get-market-analysis`
 
 Provides detailed market analysis including:
 - Top 5 exchanges by volume
@@ -107,7 +138,7 @@ Provides detailed market analysis including:
 - Volume distribution analysis
 - VWAP (Volume Weighted Average Price)
 
-#### get-historical-analysis
+#### `get-historical-analysis`
 
 Analyzes historical price data with:
 - Customizable time intervals (5min to 1 day)
@@ -126,7 +157,8 @@ Analyzes historical price data with:
 
 ## Project Inspiration
 
-This project is a fork of Tracey Russell's [mcp-crypto-price](https://github.com/truss44/mcp-crypto-price), which was inspired by Alex Andru's [coincap-mcp](https://github.com/QuantGeekDev/coincap-mcp) project.
+- This project is a fork of Tracey Russell's [mcp-crypto-price](https://github.com/truss44/mcp-crypto-price),
+- Tracey’s project was inspired by Alex Andru’s [coincap-mcp](https://github.com/QuantGeekDev/coincap-mcp) project.
 
 ## License
 
