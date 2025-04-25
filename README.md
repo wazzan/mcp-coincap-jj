@@ -1,3 +1,5 @@
+[![MseeP Badge](https://mseep.net/pr/wazzan-mcp-coincap-jj-badge.jpg)](https://mseep.ai/app/wazzan-mcp-coincap-jj)
+
 # Crypto Price & Market Analysis MCP Server (JJ Fork)
 
 [![smithery badge](https://smithery.ai/badge/@wazzan/mcp-coincap-jj)](https://smithery.ai/server/@wazzan/mcp-coincap-jj)
